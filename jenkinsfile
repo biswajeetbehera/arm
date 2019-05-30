@@ -2,10 +2,17 @@ pipeline {
     agent any
 
     stages {
+<<<<<<< HEAD
+        stage ('compile stage') {
+
+            steps {
+                withMaven(maven : 'maven_3_5_0') {
+=======
         stage ('compile statge') {
 
             steps {
                 withMaven(maven: 'maven_3_5_0') {
+>>>>>>> b3859c2c78af1cb58e60fd92b0097cd51eac3e68
                     sh 'mvn clean compile'
                 }
             }
@@ -14,7 +21,11 @@ pipeline {
         stage ('test statge') {
 
             steps {
+<<<<<<< HEAD
+                withMaven(maven : 'maven_3_5_0') {
+=======
                 withMaven(maven: 'maven_3_5_0') {
+>>>>>>> b3859c2c78af1cb58e60fd92b0097cd51eac3e68
                     sh 'mvn test'
                 }
             }
@@ -22,10 +33,18 @@ pipeline {
         stage ('Deployment statge') {
 
             steps {
+<<<<<<< HEAD
+                withMaven(maven : 'maven_3_5_0') {
+=======
                 withMaven(maven: 'maven_3_5_0') {
+>>>>>>> b3859c2c78af1cb58e60fd92b0097cd51eac3e68
                     sh 'mvn deploy'
                 }
             }
         }      
     }
+<<<<<<< HEAD
+}      
+=======
 }    
+>>>>>>> b3859c2c78af1cb58e60fd92b0097cd51eac3e68
