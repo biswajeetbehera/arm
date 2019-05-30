@@ -1,0 +1,31 @@
+pipeleine {
+    agent any
+
+    stages {
+        stage ('complie statge') {
+
+            steps {
+                withMaven(maven: 'maven_3_5_0') {
+                    sh 'mvn clean complie'
+                }
+            }
+        }
+         
+        stage ('test statge') {
+
+            steps {
+                withMaven(maven: 'maven_3_5_0') {
+                    sh 'mvn test'
+                }
+            }
+        }
+        stage ('Deployment statge') {
+
+            steps {
+                withMaven(maven: 'maven_3_5_0') {
+                    sh 'mvn Deploy'
+                }
+            }
+        }      
+    }
+}    
